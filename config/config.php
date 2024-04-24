@@ -1,5 +1,11 @@
 <?php
-$server = 'localhost';
-$bd_name = 'bdrsu';
-$user = 'root';
-$password = '';
+
+define("DRIVER", "mysql");
+define("HOST", "localhost");
+define("USER", "root");
+define("PASS", "");
+define("DATABASE", "bdrsu");
+define("PORT", "3306");
+define("CHARSET", "utf8");
+
+?>
