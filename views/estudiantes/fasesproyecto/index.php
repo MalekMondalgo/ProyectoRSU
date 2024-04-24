@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-lg-12 d-flex align-items-center mb-3">
                     <div class="mx-auto">
-                        <img src="../../assets/images/logos/paso1.png" alt="">
+                        <img src="../../../assets/images/logos/paso1.png" alt="">
                     </div>
                 </div>
             </div>
