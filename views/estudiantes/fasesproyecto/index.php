@@ -28,12 +28,13 @@
                                         <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="Juan Perez Salas">
                                     </div>
                                     <div class="col-md-4 mb-2">
-                                        <label for="exampleInputPassword1" class="form-label">Carrera : *</label>
-                                        <input type="text" class="form-control" id="exampleInputPassword1" value="Malek Arni Mondalgo Nuñez">
+                                        <label for="carrera" class="form-label">Carrera : </label>
+                                        <select class="form-control form-control-border" name="carrera" id="carrera" >
+                                        </select>
                                     </div>
                                     <div class="col-md-4 mb-2">
-                                        <label for="disabledSelect" class="form-label">Ciclo : *</label>
-                                        <select id="disabledSelect" class="form-select">
+                                        <label for="ciclo" class="form-label">Ciclo : *</label>
+                                        <select id="ciclo" class="form-select">
                                             <option>Seleccionar Ciclo</option>
                                             <option value="" selected>V</option>
                                             <option value="">VI</option>
@@ -137,5 +138,8 @@
         </div>
     </div>
 </div>
+
+<script src="../estudiantes.js"></script>
+
 
 <?php include("../layout/footer.php"); ?>
