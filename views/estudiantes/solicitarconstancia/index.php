@@ -83,7 +83,10 @@
                                     </div>
                                     <div class="col-md-2 mb-2">
                                         <div class="text-right">
+                                            <!--
                                             <button type="submit" class="btn btn-primary btn-lg">REGISTRAR</button>
+-->
+                                            <a href="estadosolicitud.php" class="btn btn-primary btn-lg">REGISTRAR</a>
                                         </div>
                                     </div>
                                 </div>

@@ -39,7 +39,7 @@
                                                     <td class="text-justify text-center"><button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#editarfecha" data-bs-whatever="@mdo">EDITAR FECHA</button></td>
                                                     <td class="text-justify text-center"><button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#registrarencuesta" data-bs-whatever="@mdo">REGISTRAR ENCUESTA</button></td>
                                                     <td class="text-justify text-center"><button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#confirmacionparticipacion" data-bs-whatever="@mdo">PARTICIPACION</button></td>
-                                                    <td class="text-justify text-center"><button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#subirinformefinal" data-bs-whatever="@mdo">REGISTRAR</button></td>
+                                                    <td class="text-justify text-center"><button type="file" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#subirinformefinal" data-bs-whatever="@mdo">REGISTRAR</button></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -74,7 +74,7 @@
     </div>
 </div>
 <?php include("../layout/footer.php"); ?>
-
+<!-- MODAL EDITAR FECHA-->
 <div class="modal fade" id="editarfecha" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -103,13 +103,13 @@
         </div>
     </div>
 </div>
-
+<!-- MODAL REGISTRAR ENCUESTA-->
 <div class="modal fade modal-xl" id="registrarencuesta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <div class="text-center w-100">
-                    <h5 class="m-0">EDITAR FECHA DE FINALIZACION</h5>
+                    <h5 class="m-0">REGISTRE FICHA DE SATISFACCION</h5>
                 </div>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -212,11 +212,72 @@
                     </div>
                     <div class="modal-footer d-flex justify-content-center">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCELAR</button>
-                        <button type="button" class="btn btn-primary">EDITAR</button>
+                        <button type="button" class="btn btn-primary">GUARDAR CAMBIOS</button>
                     </div>
                 </form>
             </div>
+        </div>
+    </div>
+</div>
 
+<!-- MODAL PARTICIPACION -->
+<div class="modal fade modal-xl" id="confirmacionparticipacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="text-center w-100">
+                    <h5 class="m-0">REGISTRE FICHA DE SATISFACCION</h5>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <div class="table-responsive">
+                            <table class="table  mb-0 align-middle" id="myTable3">
+                                <thead class="text-dark fs-4">
+                                    <tr>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-bold mb-0 text-center">ID</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-bold mb-0 text-center">NOMBRES Y APELLIDOS</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-bold mb-0 text-center">DNI</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-bold mb-0 text-center">ACCION</h6>
+                                        </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="text-center text-black">
+                                        <td class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">1</h6>
+                                        </td>
+                                        <td class="border-bottom-0">
+                                            <p class="mb-0 fw-normal">TAIPE CANCHO MARIO HUBERTO</p>
+                                        </td>
+                                        <td class="border-bottom-0">
+                                            <p class="mb-0 fw-normal">72455351</p>
+                                        </td>
+                                        <td class="border-bottom-0">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCELAR</button>
+                        <button type="button" class="btn btn-primary">GUARDAR CAMBIOS</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>

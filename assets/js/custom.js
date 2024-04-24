@@ -6,6 +6,7 @@ let voluntariado;
 let tablaacceso;
 let searchInput;
 let rankingdocente;
+
 $(document).ready(function() {
     // Inicializa DataTables en tu tabla, pero sin mostrarla de inmediato
     var tablaacceso = $('#tablaacceso').DataTable({
