@@ -7,9 +7,10 @@
     <title>SERUS-UNDC</title>
     <link rel="shortcut icon" type="image/png" href="../../../assets/images/logos/logorsuundc.png" />
     <link rel="stylesheet" href="../../../assets/css/styles.min.css" />
+    <link rel="stylesheet" href="../../../assets/select2/css/select2.min.css" />
 
-      <!-- sweet alert -->
-    
+
+    <!-- sweet alert -->
     <script src="../../../assets/sweet/js/sweetalert2.js"></script>
     <script src="../../../assets/sweet/js/sweet.js"></script>
     <script src="../../../assets/sweet/js/peticiones.js"></script>

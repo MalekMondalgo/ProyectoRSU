@@ -1,7 +1,6 @@
 <?php include("../layout/head.php"); ?>
 <?php include("../layout/sidebar.php"); ?>
 
-<!--  Main wrapper -->
 <div class="body-wrapper">
     <?php include("../layout/header_navbar.php"); ?>
 
@@ -29,7 +28,8 @@
                                     </div>
                                     <div class="col-md-4 mb-2">
                                         <label for="carrera" class="form-label">Carrera : </label>
-                                        <select class="form-control form-control-border" name="carrera" id="carrera" >
+                                        <select class="form-control form-control-border" name="carrera" id="carrera">
+
                                         </select>
                                     </div>
                                     <div class="col-md-4 mb-2">
@@ -54,10 +54,20 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4 mb-2">
-                                        <label for="disabledSelect" class="form-label">Seleccionar Equipo : *</label>
-                                        <select id="disabledSelect" class="form-select">
-                                            <option>Seleccionar Equipo</option>
-                                            <option value="">V</option>
+                                        <label for="buscador" class="form-label">Seleccionar Equipo : *</label>
+                                        <select class="js-states form-control" id="buscadorequipo" multiple="multiple" style="display: none; width: 100%">
+                                            <optgroup label="Nombres y Apellidos">
+                                                <option value="1">Malek Mondalgo Nuñez</option>
+                                                <option value="2">Jeriot Magallanes</option>
+                                                <option value="1">Angel Chacaliaza</option>
+                                                <option value="2">Malek Mondalgo Nuñez</option>
+                                                <option value="2">Jeriot Magallanes</option>
+                                                <option value="1">Angel Chacaliaza</option>
+                                                <option value="1">Malek Mondalgo Nuñez</option>
+                                                <option value="1">Jeriot Magallanes</option>
+                                                <option value="1">Angel Chacaliaza</option>
+                                            </optgroup>
+
                                         </select>
                                     </div>
                                     <div class="col-md-4 mb-2">
@@ -68,10 +78,19 @@
                                         </select>
                                     </div>
                                     <div class="col-md-4 mb-2">
-                                        <label for="disabledSelect" class="form-label">Seleccionar Asesor :*</label>
-                                        <select id="disabledSelect" class="form-select">
-                                            <option>Seleccionar Asesor</option>
-                                            <option value="">V</option>
+                                        <label for="buscador" class="form-label">Seleccionar Asesor : *</label>
+                                        <select class="form-control js-example-basic-multiple" id="buscadordocente" multiple="multiple" style="display: none; width: 100%">
+                                            <optgroup label="Nombres y Apellidos">
+                                                <option value="1">Malek Mondalgo Nuñez</option>
+                                                <option value="2">Jeriot Magallanes</option>
+                                                <option value="1">Angel Chacaliaza</option>
+                                                <option value="2">Malek Mondalgo Nuñez</option>
+                                                <option value="2">Jeriot Magallanes</option>
+                                                <option value="1">Angel Chacaliaza</option>
+                                                <option value="1">Malek Mondalgo Nuñez</option>
+                                                <option value="1">Jeriot Magallanes</option>
+                                                <option value="1">Angel Chacaliaza</option>
+                                            </optgroup>
                                         </select>
                                     </div>
                                 </div>
@@ -141,5 +160,13 @@
 
 <script src="../estudiantes.js"></script>
 
+<script>
+    $(document).ready(function() {
+        $('#buscadorequipo').select2();
+    });
+    $(document).ready(function() {
+        $('#buscadordocente').select2();
+    });
+</script>
 
 <?php include("../layout/footer.php"); ?>
