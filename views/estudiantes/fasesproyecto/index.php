@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4 mb-2">
-                                        <label for="buscador" class="form-label">Seleccionar Equipo :</label>
+                                        <label for="buscadorequipo" class="form-label">Seleccionar Equipo :</label>
                                         <select class="form-select  js-states " id="buscadorequipo" multiple="multiple" style="display: none; width: 100%">
 
                                         </select>
@@ -79,7 +79,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-4 mb-2">
-                                        <label for="numeroBeneficiados" class="form-label">Numero de Beneficiados :*</label>
+                                        <label for="numeroBeneficiados" class="form-label">Número de Beneficiados :*</label>
                                         <input type="text" class="form-control" id="numeroBeneficiados" name="numeroBeneficiados">
                                     </div>
                                 </div>
@@ -89,18 +89,12 @@
                                         <input type="text" class="form-control" id="sectorBeneficiario" name="sectorBeneficiario">
                                     </div>
                                     <div class="col-md-4 mb-2">
-                                        <label for="fechaIncial" class="form-label">Fecha Inicio:</label>
+                                        <label for="fechaInicial" class="form-label">Fecha Inicio:</label>
                                         <input type="date" class="form-control" id="fechaIncial" name="fechaIncial">
                                     </div>
                                     <div class="col-md-4 mb-2">
                                         <label for="fechaFin" class="form-label">Fecha Fin:</label>
                                         <input type="date" class="form-control" id="fechaFin" name="fechaFin">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6 mb-2">
-                                        <label for="archivoEstudianteProyecto" class="form-label">Subir Archivo :</label>
-                                        <input type="file" class="form-control" id="archivoEstudianteProyecto" name="archivoEstudianteProyecto">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -113,7 +107,8 @@
                                             <!--
                                             <button type="submit" class="btn btn-primary btn-lg" >Siguiente</button>
                     -->
-                                            <a href="conformidad.php" class="btn btn-primary btn-lg">Siguiente</a>
+                                            <button type="button" class="btn btn-primary btn-lg" id="registrarPreProyecto">Guardar</button>
+                                           
                                         </div>
                                     </div>
                                 </div>
@@ -127,15 +122,7 @@
     </div>
 </div>
 
-<script src="../../../js/estudiantes.js"></script>
+<script src="../../../assets/js/estudiantes.js"></script>
 
-<script>
-    $(document).ready(function() {
-        $('#buscadorequipo').select2();
-    });
-    $(document).ready(function() {
-        $('#buscadordocente').select2();
-    });
-</script>
 
 <?php include("../layout/footer.php"); ?>

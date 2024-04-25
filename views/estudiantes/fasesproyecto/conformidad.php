@@ -27,15 +27,11 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4 mb-2">
+                                    <div class="col-md-6 mb-2">
                                         <label for="exampleInputEmail1" class="form-label">TIPO PROYECTO : *</label>
                                         <input type="text" class="form-control" disabled id="exampleInputEmail1" aria-describedby="emailHelp" value="Proyeccion Social">
                                     </div>
-                                    <div class="col-md-4 mb-2">
-                                        <label for="exampleInputEmail1" class="form-label">ASESOR: *</label>
-                                        <input type="text" class="form-control" disabled id="exampleInputEmail1" aria-describedby="emailHelp" value="Ricardo Inquilla Quispe">
-                                    </div>
-                                    <div class="col-md-4 mb-2">
+                                    <div class="col-md-6 mb-2">
                                         <label for="exampleInputEmail1" class="form-label">ODS: *</label>
                                         <input type="text" class="form-control" disabled id="exampleInputEmail1" aria-describedby="emailHelp" value="Educacion de calidad">
                                     </div>
@@ -69,12 +65,21 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                <div class="col-md-12 mb-2">
-                                <label for="exampleInputEmail1" class="form-label">INTEGRANTES: *</label>
-                                <textarea class="form-control" disabled value="" id="floatingTextarea">Juan, Pepe, etc</textarea>
-
-
+                                    <div class="col-md-6 mb-2">
+                                        <label for="exampleInputEmail1" class="form-label">INTEGRANTES: *</label>
+                                        <textarea class="form-control" disabled value="" id="floatingTextarea">Juan, Pepe, etc</textarea>
+                                    </div>
+                                    
+                                    <div class="col-md-6 mb-2">
+                                        <label for="exampleInputEmail1" class="form-label">ASESORES: *</label>
+                                        <textarea class="form-control" disabled value="" id="floatingTextarea">Juan, Pepe, etc</textarea>
+                                    </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-2">
+                                        <label for="archivoEstudianteProyecto" class="form-label">Subir Archivo :</label>
+                                        <input type="file" class="form-control" id="archivoEstudianteProyecto" name="archivoEstudianteProyecto">
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-8 mb-2">
@@ -87,7 +92,7 @@
                                     <div class="col-md-2 mb-2">
                                         <div class="text-right">
                                         <!--    <input type="submit" name="registrarproyecto" class="btn btn-primary btn-lg" onclick="registroproyecto(event)" value="Registrar">-->
-                                            <a href="estadoproyecto.php" class="btn btn-primary btn-lg" onclick="registroproyecto(event)">Registrar</a>
+                                        <button type="button" class="btn btn-primary btn-lg" id="registrarConformidad">Registrar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -100,5 +105,8 @@
         </div>
     </div>
 </div>
+
+
+<script src="../../../assets/js/estudiantes.js"></script>
 
 <?php include("../layout/footer.php"); ?>
