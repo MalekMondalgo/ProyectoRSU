@@ -23,8 +23,10 @@
                             <form>
                                 <div class="row">
                                     <div class="col-md-4 mb-2">
-                                        <label for="exampleInputEmail1" class="form-label">Nombres y Apellidos : *</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="Juan Perez Salas">
+                                        <label for="estudiante" class="form-label">Nombres y Apellidos : *</label>
+                                        <select class="form-control form-control-border" name="estudiante" id="estudiante">
+
+                                        </select>
                                     </div>
                                     <div class="col-md-4 mb-2">
                                         <label for="carrera" class="form-label">Carrera : </label>
@@ -33,16 +35,9 @@
                                         </select>
                                     </div>
                                     <div class="col-md-4 mb-2">
-                                        <label for="ciclo" class="form-label">Ciclo : *</label>
-                                        <select id="ciclo" class="form-select">
-                                            <option>Seleccionar Ciclo</option>
-                                            <option value="" selected>V</option>
-                                            <option value="">VI</option>
-                                            <option value="">VII</option>
-                                            <option value="">VIII</option>
-                                            <option value="">IX</option>
-                                            <option value="">X</option>
-                                            <option value="">Egresado</option>
+                                        <label for="ciclo" class="form-label">Ciclo : </label>
+                                        <select class="form-control form-control-border" name="ciclo" id="ciclo">
+
                                         </select>
                                     </div>
                                 </div>
@@ -158,7 +153,7 @@
     </div>
 </div>
 
-<script src="../estudiantes.js"></script>
+<script src="../../../js/estudiantes.js"></script>
 
 <script>
     $(document).ready(function() {

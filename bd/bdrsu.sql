@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-04-2024 a las 06:32:14
+-- Tiempo de generación: 25-04-2024 a las 02:26:06
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -20,6 +20,20 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `bdrsu`
 --
+
+DELIMITER $$
+--
+-- Procedimientos
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SPU_estudiante_cargar_carrera` ()   BEGIN
+    SELECT * FROM carrera;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SPU_estudiante_cargar_ciclo` ()   SELECT * FROM ciclo$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SPU_estudiante_cargar_estudiantes` ()   SELECT * FROM estudiantes$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -61,6 +75,45 @@ CREATE TABLE `carrera` (
   `id_facu` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `carrera`
+--
+
+INSERT INTO `carrera` (`id_car`, `nombre`, `nomcorto`, `id_facu`) VALUES
+(1, 'Contabilidad', 'Cont', 6),
+(2, 'Ingeniería de Sistemas', 'IngSis', 7),
+(3, 'Agronomía', 'Agr', 8),
+(4, 'Administración de Empresas', 'AdmEmp', 9),
+(5, 'Turismo', 'Tur', 10);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ciclo`
+--
+
+CREATE TABLE `ciclo` (
+  `id_ciclo` int(11) NOT NULL,
+  `nombre_ciclo` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `ciclo`
+--
+
+INSERT INTO `ciclo` (`id_ciclo`, `nombre_ciclo`) VALUES
+(1, 'I'),
+(2, 'II'),
+(3, 'III'),
+(4, 'IV'),
+(5, 'V'),
+(6, 'VI'),
+(7, 'VII'),
+(8, 'VIII'),
+(9, 'IX'),
+(10, 'X'),
+(11, 'Egresado');
+
 -- --------------------------------------------------------
 
 --
@@ -75,6 +128,17 @@ CREATE TABLE `docentes` (
   `email` varchar(45) DEFAULT NULL,
   `celular` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `docentes`
+--
+
+INSERT INTO `docentes` (`id_doce`, `dni_doce`, `nombre`, `apellido`, `email`, `celular`) VALUES
+(1, '12345678A', 'María', 'García', 'maria@example.com', '123456789'),
+(2, '98765432B', 'Juan', 'Martínez', 'juan@example.com', '987654321'),
+(3, '45678901C', 'Ana', 'López', 'ana@example.com', '456789012'),
+(4, '78901234D', 'Pedro', 'Rodríguez', 'pedro@example.com', '789012345'),
+(5, '34567890E', 'Laura', 'Sánchez', 'laura@example.com', '345678901');
 
 -- --------------------------------------------------------
 
@@ -126,6 +190,22 @@ CREATE TABLE `estudiantes` (
   `fecnac` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `estudiantes`
+--
+
+INSERT INTO `estudiantes` (`id_estu`, `codigo`, `dni_estu`, `nombre`, `apellido`, `email`, `celular`, `fecnac`) VALUES
+(1, '001', '12345678', 'Juan', 'Pérez', 'juan@example.com', '987654321', '1995-05-10'),
+(3, '002', '23456789', 'María', 'Gómez', 'maria@example.com', '876543210', '1996-08-15'),
+(4, '003', '34567890', 'Pedro', 'Martínez', 'pedro@example.com', '765432109', '1997-11-20'),
+(5, '004', '45678901', 'Laura', 'López', 'laura@example.com', '654321098', '1998-02-25'),
+(6, '005', '56789012', 'Carlos', 'Sánchez', 'carlos@example.com', '543210987', '1999-05-30'),
+(7, '006', '67890123', 'Ana', 'Fernández', 'ana@example.com', '432109876', '2000-08-05'),
+(8, '007', '78901234', 'Diego', 'García', 'diego@example.com', '321098765', '2001-11-10'),
+(9, '008', '89012345', 'Elena', 'Rodríguez', 'elena@example.com', '210987654', '2002-02-15'),
+(10, '009', '90123456', 'Miguel', 'Paz', 'miguel@example.com', '109876543', '2003-05-20'),
+(11, '010', '01234567', 'Sofía', 'Díaz', 'sofia@example.com', '098765432', '2004-08-25');
+
 -- --------------------------------------------------------
 
 --
@@ -137,6 +217,17 @@ CREATE TABLE `facultad` (
   `nombre` varchar(45) DEFAULT NULL,
   `nomcorto` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `facultad`
+--
+
+INSERT INTO `facultad` (`id_facu`, `nombre`, `nomcorto`) VALUES
+(6, 'Facultad de Ciencias Económicas', 'FCE'),
+(7, 'Facultad de Ingeniería de Sistemas', 'FIS'),
+(8, 'Facultad de Agronomía', 'FA'),
+(9, 'Facultad de Administración de Empresas', 'FAE'),
+(10, 'Facultad de Turismo', 'FT');
 
 -- --------------------------------------------------------
 
@@ -164,6 +255,17 @@ CREATE TABLE `lineasrsu` (
   `nombre` varchar(45) DEFAULT NULL COMMENT 'Se establecen las líneas de proyecto.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `lineasrsu`
+--
+
+INSERT INTO `lineasrsu` (`id_linea`, `nombre`) VALUES
+(1, 'linea1'),
+(2, 'linea2'),
+(3, 'linea3'),
+(4, 'linea4'),
+(5, 'linea5');
+
 -- --------------------------------------------------------
 
 --
@@ -174,6 +276,17 @@ CREATE TABLE `ods` (
   `id_ods` int(11) NOT NULL,
   `nombre` varchar(45) DEFAULT NULL COMMENT 'Tabla donde se establece los objetivos de desarrollo sostenible del proyecto.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `ods`
+--
+
+INSERT INTO `ods` (`id_ods`, `nombre`) VALUES
+(1, 'ods1'),
+(2, 'ods2'),
+(3, 'ods3'),
+(4, 'ods4'),
+(5, 'ods5');
 
 -- --------------------------------------------------------
 
@@ -273,6 +386,14 @@ CREATE TABLE `semestre` (
   `estado` char(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `semestre`
+--
+
+INSERT INTO `semestre` (`id_semestre`, `semestre`, `estado`) VALUES
+(1, '2024-I', 'A'),
+(2, '2024-II', 'A');
+
 -- --------------------------------------------------------
 
 --
@@ -283,6 +404,17 @@ CREATE TABLE `tipologia` (
   `id_tipo` int(11) NOT NULL,
   `nombre` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `tipologia`
+--
+
+INSERT INTO `tipologia` (`id_tipo`, `nombre`) VALUES
+(1, 'tipologia1'),
+(2, 'tipologia2'),
+(3, 'tipologia3'),
+(4, 'tipologia4'),
+(5, 'tipologia5');
 
 -- --------------------------------------------------------
 
@@ -319,6 +451,12 @@ ALTER TABLE `apoyo_social`
 ALTER TABLE `carrera`
   ADD PRIMARY KEY (`id_car`),
   ADD KEY `id_facu_idx` (`id_facu`);
+
+--
+-- Indices de la tabla `ciclo`
+--
+ALTER TABLE `ciclo`
+  ADD PRIMARY KEY (`id_ciclo`);
 
 --
 -- Indices de la tabla `docentes`
@@ -426,6 +564,64 @@ ALTER TABLE `voluntariado`
   ADD KEY `id_estu_idx` (`id_estu`),
   ADD KEY `id_car_idx` (`id_car`),
   ADD KEY `id_smestre_idx` (`id_semestre`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `carrera`
+--
+ALTER TABLE `carrera`
+  MODIFY `id_car` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `ciclo`
+--
+ALTER TABLE `ciclo`
+  MODIFY `id_ciclo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT de la tabla `docentes`
+--
+ALTER TABLE `docentes`
+  MODIFY `id_doce` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `estudiantes`
+--
+ALTER TABLE `estudiantes`
+  MODIFY `id_estu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT de la tabla `facultad`
+--
+ALTER TABLE `facultad`
+  MODIFY `id_facu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT de la tabla `lineasrsu`
+--
+ALTER TABLE `lineasrsu`
+  MODIFY `id_linea` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `ods`
+--
+ALTER TABLE `ods`
+  MODIFY `id_ods` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `semestre`
+--
+ALTER TABLE `semestre`
+  MODIFY `id_semestre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT de la tabla `tipologia`
+--
+ALTER TABLE `tipologia`
+  MODIFY `id_tipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
