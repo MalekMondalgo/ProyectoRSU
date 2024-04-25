@@ -24,109 +24,83 @@
                                 <div class="row">
                                     <div class="col-md-4 mb-2">
                                         <label for="estudiante" class="form-label">Nombres y Apellidos : *</label>
-                                        <select class="form-control form-control-border" name="estudiante" id="estudiante">
+                                        <select class="form-select " name="estudiante" id="estudiante">
 
                                         </select>
                                     </div>
                                     <div class="col-md-4 mb-2">
                                         <label for="carrera" class="form-label">Carrera : </label>
-                                        <select class="form-control form-control-border" name="carrera" id="carrera">
+                                        <select class="form-select " name="carrera" id="carrera">
 
                                         </select>
                                     </div>
                                     <div class="col-md-4 mb-2">
                                         <label for="ciclo" class="form-label">Ciclo : </label>
-                                        <select class="form-control form-control-border" name="ciclo" id="ciclo">
+                                        <select class="form-select " name="ciclo" id="ciclo">
 
                                         </select>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12 mb-2">
-                                        <label for="exampleInputEmail1" class="form-label">Nombre del Proyecto: *</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre del proyecto">
+                                        <label for="nombreProyeto" class="form-label">Nombre del Proyecto:</label>
+                                        <input type="text" class="form-control" id="nombreProyecto" aria-describedby="emailHelp" placeholder="Nombre del proyecto">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4 mb-2">
-                                        <label for="buscador" class="form-label">Seleccionar Equipo : *</label>
-                                        <select class="js-states form-control" id="buscadorequipo" multiple="multiple" style="display: none; width: 100%">
-                                            <optgroup label="Nombres y Apellidos">
-                                                <option value="1">Malek Mondalgo Nuñez</option>
-                                                <option value="2">Jeriot Magallanes</option>
-                                                <option value="1">Angel Chacaliaza</option>
-                                                <option value="2">Malek Mondalgo Nuñez</option>
-                                                <option value="2">Jeriot Magallanes</option>
-                                                <option value="1">Angel Chacaliaza</option>
-                                                <option value="1">Malek Mondalgo Nuñez</option>
-                                                <option value="1">Jeriot Magallanes</option>
-                                                <option value="1">Angel Chacaliaza</option>
-                                            </optgroup>
+                                        <label for="buscador" class="form-label">Seleccionar Equipo :</label>
+                                        <select class="form-select  js-states " id="buscadorequipo" multiple="multiple" style="display: none; width: 100%">
 
                                         </select>
                                     </div>
                                     <div class="col-md-4 mb-2">
-                                        <label for="disabledSelect" class="form-label">Seleccionar Tipo de Proyecto :*</label>
-                                        <select id="disabledSelect" class="form-select">
-                                            <option>Seleccionar Tipo de Proyecto</option>
-                                            <option value="">V</option>
+                                        <label for="tipologia" class="form-label">Seleccionar Tipo de Proyecto :</label>
+                                        <select class="form-select " name="tipologia" id="tipologia">
+
                                         </select>
                                     </div>
                                     <div class="col-md-4 mb-2">
-                                        <label for="buscador" class="form-label">Seleccionar Asesor : *</label>
-                                        <select class="form-control js-example-basic-multiple" id="buscadordocente" multiple="multiple" style="display: none; width: 100%">
-                                            <optgroup label="Nombres y Apellidos">
-                                                <option value="1">Malek Mondalgo Nuñez</option>
-                                                <option value="2">Jeriot Magallanes</option>
-                                                <option value="1">Angel Chacaliaza</option>
-                                                <option value="2">Malek Mondalgo Nuñez</option>
-                                                <option value="2">Jeriot Magallanes</option>
-                                                <option value="1">Angel Chacaliaza</option>
-                                                <option value="1">Malek Mondalgo Nuñez</option>
-                                                <option value="1">Jeriot Magallanes</option>
-                                                <option value="1">Angel Chacaliaza</option>
-                                            </optgroup>
+                                        <label for="buscadordocente" class="form-label">Seleccionar Asesor : </label>
+                                        <select class="form-select js-example-basic-multiple" id="buscadordocente" multiple="multiple" style="display: none; width: 100%">
+                                       
                                         </select>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4 mb-2">
-                                        <label for="disabledSelect" class="form-label">Seleccionar ODS :*</label>
-                                        <select id="disabledSelect" class="form-select">
-                                            <option>Seleccionar ODS</option>
-                                            <option value="">V</option>
+                                        <label for="ods" class="form-label">Seleccionar ODS :</label>
+                                        <select id="ods" name="ods" class="form-select ">
                                         </select>
                                     </div>
                                     <div class="col-md-4 mb-2">
-                                        <label for="disabledSelect" class="form-label">Seleccionar Lineas de Accion :*</label>
-                                        <select id="disabledSelect" class="form-select">
-                                            <option>Seleccionar Lineas de Accion </option>
-                                            <option value="">V</option>
+                                        <label for="lineas" class="form-label">Seleccionar Lineas de Accion :</label>
+                                        <select id="lineas" name="lineas" class="form-select">
                                         </select>
                                     </div>
                                     <div class="col-md-4 mb-2">
-                                        <label for="exampleInputPassword1" class="form-label">Numero de Beneficiados :*</label>
-                                        <input type="text" class="form-control" id="exampleInputPassword1">
+                                        <label for="numeroBeneficiados" class="form-label">Numero de Beneficiados :*</label>
+                                        <input type="text" class="form-control" id="numeroBeneficiados" name="numeroBeneficiados">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4 mb-2">
-                                        <label for="exampleInputPassword1" class="form-label">Sector Beneficiado :*</label>
-                                        <input type="text" class="form-control" id="exampleInputPassword1">
+                                        <label for="sectorBeneficiario" class="form-label">Sector Beneficiado :</label>
+                                        <input type="text" class="form-control" id="sectorBeneficiario" name="sectorBeneficiario">
                                     </div>
                                     <div class="col-md-4 mb-2">
-                                        <label for="exampleInputPassword1" class="form-label">Sector Beneficiado :*</label>
-                                        <input type="date" class="form-control" id="exampleInputPassword1">
+                                        <label for="fechaIncial" class="form-label">Fecha Inicio:</label>
+                                        <input type="date" class="form-control" id="fechaIncial" name="fechaIncial">
                                     </div>
                                     <div class="col-md-4 mb-2">
-                                        <label for="exampleInputPassword1" class="form-label">Sector Beneficiado :*</label>
-                                        <input type="date" class="form-control" id="exampleInputPassword1">
+                                        <label for="fechaFin" class="form-label">Fecha Fin:</label>
+                                        <input type="date" class="form-control" id="fechaFin" name="fechaFin">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6 mb-2">
-                                        <label for="exampleInputPassword1" class="form-label">Subir Archivo :*</label>
-                                        <input type="file" class="form-control" id="exampleInputPassword1">
+                                        <label for="archivoEstudianteProyecto" class="form-label">Subir Archivo :</label>
+                                        <input type="file" class="form-control" id="archivoEstudianteProyecto" name="archivoEstudianteProyecto">
                                     </div>
                                 </div>
                                 <div class="row">

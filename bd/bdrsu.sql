@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-04-2024 a las 02:26:06
+-- Tiempo de generación: 25-04-2024 a las 04:25:11
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -31,7 +31,15 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SPU_estudiante_cargar_ciclo` ()   SELECT * FROM ciclo$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SPU_estudiante_cargar_docente` ()   SELECT * FROM docentes$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SPU_estudiante_cargar_estudiantes` ()   SELECT * FROM estudiantes$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SPU_estudiante_cargar_lineas` ()   SELECT * FROM lineasrsu$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SPU_estudiante_cargar_ods` ()   SELECT * FROM ods$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SPU_estudiante_cargar_tipologia` ()   SELECT * FROM tipologia$$
 
 DELIMITER ;
 
