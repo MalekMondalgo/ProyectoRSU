@@ -1,3 +1,6 @@
+<?php
+  $pagina_actual = 'index3';
+?>
 <?php include("../layout/head.php"); ?>
 <?php include("../layout/sidebar.php"); ?>
 

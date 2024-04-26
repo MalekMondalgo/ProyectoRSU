@@ -6,7 +6,10 @@
                 <span class="hide-menu">Home</span>
             </li>
             <li class="sidebar-item">
-                <a class="sidebar-link" href="../fasesproyecto/" aria-expanded="false">
+                <a class="sidebar-link <?php $paginas = array('index1', 'estadoproyecto', 'conformidad');
+                                        foreach ($paginas as $pagina) {
+                                            echo ($pagina_actual == $pagina) ? 'active' : '';
+                                        } ?>" href="../fasesproyecto/" aria-expanded="false">
                     <span>
                         <!--  <i class="ti ti-article"></i>-->
                         <img src="../../../assets/images/logos/incioproyectoestudiante.png" width="25px" height="25px" alt="">
@@ -15,7 +18,10 @@
                 </a>
             </li>
             <li class="sidebar-item">
-                <a class="sidebar-link" href="../ejecucionproyecto/" aria-expanded="false">
+                <a class="sidebar-link <?php $paginas = array('index2', 'ejecucionproyecto', 'segundoentregable', 'tercerentregable');
+                                        foreach ($paginas as $pagina) {
+                                            echo ($pagina_actual == $pagina) ? 'active' : '';
+                                        } ?>" href="../ejecucionproyecto/" aria-expanded="false">
                     <span>
                         <!-- <i class="ti ti-article"></i>-->
                         <img src="../../../assets/images/logos/proyecto.png" width="25px" height="25px" alt="">
@@ -43,7 +49,10 @@
                 </a>
             </li>
             <li class="sidebar-item">
-                <a class="sidebar-link" href="../solicitarconstancia/" aria-expanded="false">
+                <a class="sidebar-link  <?php $paginas = array('index3', 'estadosolicitud');
+                                        foreach ($paginas as $pagina) {
+                                            echo ($pagina_actual == $pagina) ? 'active' : '';
+                                        } ?>" href="../solicitarconstancia/" aria-expanded="false">
                     <span>
                         <!--  <i class="ti ti-cards"></i>-->
                         <img src="../../../assets/images/logos/solicitudconstancia.png" width="25px" height="25px" alt="">

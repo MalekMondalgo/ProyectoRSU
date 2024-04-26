@@ -1,3 +1,7 @@
+<?php
+  $pagina_actual = 'estadoproyecto';
+
+?>
 <?php include("../layout/head.php"); ?>
 <?php include("../layout/sidebar.php"); ?>
 
@@ -10,7 +14,8 @@
             <div class="row">
                 <div class="col-lg-12 d-flex align-items-center mb-3">
                     <div class="mx-auto">
-                        <img src="../../../../assets/images/logos/paso3.png" alt="">
+                        <img src="../../../assets/images/logos/paso2_fase.png" alt="">
+
                     </div>
                 </div>
             </div>

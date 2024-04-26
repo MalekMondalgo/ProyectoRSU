@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-04-2024 a las 04:25:11
+-- Tiempo de generación: 25-04-2024 a las 18:39:04
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -40,6 +40,10 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SPU_estudiante_cargar_lineas` ()   
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SPU_estudiante_cargar_ods` ()   SELECT * FROM ods$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SPU_estudiante_cargar_tipologia` ()   SELECT * FROM tipologia$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SPU_usuario_login` (IN `_email` TEXT)   SELECT * FROM `usuario`
+INNER JOIN estudiantes on estudiantes.id_estu = usuario.estudiante
+WHERE estudiantes.email= _email$$
 
 DELIMITER ;
 
@@ -193,7 +197,7 @@ CREATE TABLE `estudiantes` (
   `dni_estu` varchar(10) DEFAULT NULL,
   `nombre` varchar(45) DEFAULT NULL,
   `apellido` varchar(45) DEFAULT NULL,
-  `email` varchar(45) DEFAULT NULL,
+  `email` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `celular` varchar(45) DEFAULT NULL,
   `fecnac` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -209,8 +213,6 @@ INSERT INTO `estudiantes` (`id_estu`, `codigo`, `dni_estu`, `nombre`, `apellido`
 (5, '004', '45678901', 'Laura', 'López', 'laura@example.com', '654321098', '1998-02-25'),
 (6, '005', '56789012', 'Carlos', 'Sánchez', 'carlos@example.com', '543210987', '1999-05-30'),
 (7, '006', '67890123', 'Ana', 'Fernández', 'ana@example.com', '432109876', '2000-08-05'),
-(8, '007', '78901234', 'Diego', 'García', 'diego@example.com', '321098765', '2001-11-10'),
-(9, '008', '89012345', 'Elena', 'Rodríguez', 'elena@example.com', '210987654', '2002-02-15'),
 (10, '009', '90123456', 'Miguel', 'Paz', 'miguel@example.com', '109876543', '2003-05-20'),
 (11, '010', '01234567', 'Sofía', 'Díaz', 'sofia@example.com', '098765432', '2004-08-25');
 
@@ -405,6 +407,50 @@ INSERT INTO `semestre` (`id_semestre`, `semestre`, `estado`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `temp_asesor`
+--
+
+CREATE TABLE `temp_asesor` (
+  `id` int(11) NOT NULL,
+  `proyecto` int(11) NOT NULL,
+  `docente` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `temp_estudiante`
+--
+
+CREATE TABLE `temp_estudiante` (
+  `id` int(11) NOT NULL,
+  `proyecto` int(11) NOT NULL,
+  `estudiante` int(11) NOT NULL,
+  `carrera` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `temp_proyecto`
+--
+
+CREATE TABLE `temp_proyecto` (
+  `id` int(11) NOT NULL,
+  `nombre_proyecto` text NOT NULL,
+  `tipologia` int(11) NOT NULL,
+  `ods` int(11) NOT NULL,
+  `linea` int(11) NOT NULL,
+  `numero_beneficiados` int(11) NOT NULL,
+  `sector_beneficiado` text NOT NULL,
+  `fecha_inicio` date NOT NULL,
+  `fecha_fin` date NOT NULL,
+  `archivo` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `tipologia`
 --
 
@@ -423,6 +469,28 @@ INSERT INTO `tipologia` (`id_tipo`, `nombre`) VALUES
 (3, 'tipologia3'),
 (4, 'tipologia4'),
 (5, 'tipologia5');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `id` int(11) NOT NULL,
+  `password` text NOT NULL,
+  `nivelacceso` varchar(1) NOT NULL,
+  `estudiante` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `password`, `nivelacceso`, `estudiante`) VALUES
+(2, '123456', 'E', 3),
+(4, '123456', 'E', 5),
+(5, '123456', 'E', 7);
 
 -- --------------------------------------------------------
 
@@ -559,10 +627,29 @@ ALTER TABLE `semestre`
   ADD PRIMARY KEY (`id_semestre`);
 
 --
+-- Indices de la tabla `temp_estudiante`
+--
+ALTER TABLE `temp_estudiante`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `temp_proyecto`
+--
+ALTER TABLE `temp_proyecto`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `tipologia`
 --
 ALTER TABLE `tipologia`
   ADD PRIMARY KEY (`id_tipo`);
+
+--
+-- Indices de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `estudiante` (`estudiante`);
 
 --
 -- Indices de la tabla `voluntariado`
@@ -626,10 +713,28 @@ ALTER TABLE `semestre`
   MODIFY `id_semestre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT de la tabla `temp_estudiante`
+--
+ALTER TABLE `temp_estudiante`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `temp_proyecto`
+--
+ALTER TABLE `temp_proyecto`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `tipologia`
 --
 ALTER TABLE `tipologia`
   MODIFY `id_tipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
@@ -689,6 +794,12 @@ ALTER TABLE `proyecto`
   ADD CONSTRAINT `id_ods` FOREIGN KEY (`id_ods`) REFERENCES `ods` (`id_ods`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `id_semestre` FOREIGN KEY (`id_semestre`) REFERENCES `semestre` (`id_semestre`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `id_tipo` FOREIGN KEY (`id_tipo`) REFERENCES `tipologia` (`id_tipo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`estudiante`) REFERENCES `estudiantes` (`id_estu`);
 
 --
 -- Filtros para la tabla `voluntariado`

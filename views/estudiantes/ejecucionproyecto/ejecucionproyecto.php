@@ -1,3 +1,6 @@
+<?php
+  $pagina_actual = 'ejecucionproyecto';
+?>
 <?php include("../layout/head.php"); ?>
 <?php include("../layout/sidebar.php"); ?>
 <div class="body-wrapper">

@@ -1,3 +1,15 @@
+
+<?php 
+  session_start();
+  
+  if ($_SESSION['acceso'] == false){
+    //Login
+    header('Location:../../login.php');
+  }
+
+  $pagina_actual = 'conformidad';
+?>
+
 <?php include("../layout/head.php"); ?>
 <?php include("../layout/sidebar.php"); ?>
 

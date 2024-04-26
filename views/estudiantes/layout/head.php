@@ -30,10 +30,15 @@
                     <div class="col-md-4 text-center">
                         <img src="../../../assets/images/logos/logorsuundc.png" width="60px" height="60px" alt="">
                     </div>
+                   
                     <div class="col-md-8 text-center mb-0">
                         <h6 class="text-white text-center mb-0">UNDC</h6>
                         <p class="text-nav text-white mb-0">RESPONSABILIDAD </p>
                         <p class="text-nav text-white ">SOCIAL UNIVERSITARIA</p>
                     </div>
+
                 </div>
+                <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+                        <i class="ti ti-x fs-8 text-white"></i>
+                    </div>
             </div>

@@ -1,3 +1,5 @@
+
+
 $(document).ready(function(){
 
     // Listar las carreras, cuando el usuario hara los preregistros
