@@ -102,11 +102,6 @@ if(isset($_POST['op'])){
           'docente' => $_POST['docente'],
           'archivoEstudianteProyecto' => $nombre,
         ]);
-        $idsEstudiantes = json_decode($_POST['equipoJSON']);
-        foreach ($idsEstudiantes as $id) {
-          echo "imprimiendo datos";
-          echo $id;
-        }
       }
     }
   }
