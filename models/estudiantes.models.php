@@ -59,7 +59,14 @@ class Estudiantes extends ModelMaster{
             die($error->getMessage());
         }
     }
-
+    
+    public function registrarProyecto(array $data){
+        try{
+          parent::execProcedure($data, "SPU_estudiante_registrar_proyecto", false);
+        }catch(Exception $error){
+          die($error->getMessage());
+        }
+      }
 
 }
 ?>

@@ -73,6 +73,42 @@ if (isset($_GET['op'])){
       }
   }
 
+}
 
+if(isset($_POST['op'])){
+  $estudiantes = new Estudiantes();
+  if($_POST['op'] == 'registrar'){
+    $idsEstudiantes = json_decode($_POST['equipoJSON']);
+    foreach ($idsEstudiantes as $id) {
+      echo "imprimiendo datos";
+      echo $id;
+    }
+  }
+
+  if($_POST['op'] == 'registrarProyecto'){
+    $nombre = "";
+    if ($_FILES['archivoEstudianteProyecto']['tmp_name'] != ''){
+      $nombre = date('YmdhGs') . ".pdf";
+      if (move_uploaded_file($_FILES['archivoEstudianteProyecto']['tmp_name'], "../assets/ProyectosEstudiantesPDF/" . $nombre)){
+        $estudiantes->registrarProyecto([
+          'nombreProyecto' => $_POST['nombreProyecto'],
+          'tipologia' => $_POST['tipologia'],
+          'ods' => $_POST['ods'],
+          'lineas' => $_POST['lineas'],
+          'numeroBeneficiados' => $_POST['numeroBeneficiados'],
+          'sectorBeneficiario' => $_POST['sectorBeneficiario'],
+          'fechaInicial' => $_POST['fechaInicial'],
+          'fechaFin' => $_POST['fechaFin'],
+          'docente' => $_POST['docente'],
+          'archivoEstudianteProyecto' => $nombre,
+        ]);
+        $idsEstudiantes = json_decode($_POST['equipoJSON']);
+        foreach ($idsEstudiantes as $id) {
+          echo "imprimiendo datos";
+          echo $id;
+        }
+      }
+    }
+  }
 }
 ?>
